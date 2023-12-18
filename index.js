@@ -16,10 +16,21 @@ function promptUser() {
     {
       type: "input",
       message:
-        "Please enter the text color you'd like to use (OR a hexadecimal number).",
+        "Please enter the text color you would like to use (OR a hexadecimal number).",
       name: "textColor",
     },
-    {},
+    {
+      type: "list",
+      message: "Please choose which shape you would like to display.",
+      name: "shape",
+      choices: ["Circle", "Triangle", "Square"],
+    },
+    {
+      type: "input",
+      message:
+        "Please choose the color of the shape (OR a hexadecimal number).",
+      name: "shapeColor",
+    },
   ]);
 }
 
