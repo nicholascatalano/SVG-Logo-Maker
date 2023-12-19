@@ -1,7 +1,11 @@
 // DEPENDECIES
+const CLI = require("./lib/cli");
+// create new CLI object and start run method
+new CLI().run();
+
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { Circle, Triangle, Rectangle } = require("./lib/shapes");
+const { Circle } = require("./lib/shapes");
 
 // HELPER FUNCTIONS
 // prompt function to prompt user of questions when node index is ran
@@ -66,7 +70,7 @@ function writeToFile(fileName, answers) {
   // if statement to check for what user chose for shape, text color, and input
   if (answers.shape === "Circle") {
     shapeChoice = new Circle();
-
+    svgContent += Circle.render();
     // svg code for circle using user input for shape color
   } else if (answers.shape === "Triangle") {
   }
