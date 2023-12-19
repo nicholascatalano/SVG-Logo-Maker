@@ -2,7 +2,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const {} = require("./lib/shapes");
-const { text } = require("stream/consumers");
 
 // HELPER FUNCTIONS
 // prompt function to prompt user of questions when node index is ran
@@ -13,13 +12,12 @@ function promptUser() {
       message:
         "Please enter the text you would like to display on the shape (UP TO 3 CHARACTERS).",
       name: "textInput",
-      validate: function (textInput) {
-        if (textInput.length > 3 || !textInput) {
-          console.log("\n", "Enter a text value of up to 3 characters.");
-          promptUser();
-        } else {
-          console.log("\n", "Good job!");
+      // validates if textInput is > 3 char or blank, if so, reruns function and logs the issue, else, continues"
+      validate: (textInput) => {
+        if (textInput.length > 3) {
+          return console.log("\n", "Enter a text value of up to 3 characters.");
         }
+        return true;
       },
     },
     {
