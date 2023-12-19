@@ -8,7 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:dev": "jest --watch-all"
   },
   "keywords": [],
   "author": "",
