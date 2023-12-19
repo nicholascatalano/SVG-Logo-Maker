@@ -66,8 +66,8 @@ function writeToFile(fileName, answers) {
   // if statement to check for what user chose for shape, text color, and input
   if (answers.shape === "Circle") {
     shapeChoice = new Circle();
+
     // svg code for circle using user input for shape color
-    svgContent += shapeChoice;
   } else if (answers.shape === "Triangle") {
   }
 
