@@ -50,7 +50,7 @@ function promptUser() {
 }
 
 // function to write svg file
-function writeToFile() {
+function writeToFile(fileName, answers) {
   console.log("File written!");
 
   // sets file content to empty string
@@ -62,6 +62,19 @@ function writeToFile() {
 
   // inserts user shape choice into file
   svgContent += `${answers.shape}`;
+
+  // dynamic variable for shape choice
+  let shapeChoice;
+
+  // if statement to check for what user chose for shape, text color, and input
+
+  // add basic text tag, then add dynamic text content and color from user prompt
+
+  // use fs to write file using the file name, final svg data
+  fs.writeFile(fileName, svgContent, (err) => {
+    // ternary operator to check for an error, if there is log it, else log
+    err ? console.log(err) : console.log("Generated your logo.svg file!");
+  });
 }
 
 // INITIALIZATION
