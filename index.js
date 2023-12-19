@@ -49,8 +49,12 @@ function promptUser() {
     });
 }
 
+// function to write svg file
 function writeToFile() {
   console.log("File written!");
+
+  // sets file content to empty string
+  let svgContent = "";
 }
 
 // INITIALIZATION
