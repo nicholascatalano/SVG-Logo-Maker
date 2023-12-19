@@ -1,7 +1,7 @@
 // DEPENDECIES
 const inquirer = require("inquirer");
 const fs = require("fs");
-const {} = require("./lib/shapes");
+const { Circle, Triangle, Rectangle } = require("./lib/shapes");
 
 // HELPER FUNCTIONS
 // prompt function to prompt user of questions when node index is ran
@@ -60,16 +60,25 @@ function writeToFile(fileName, answers) {
   width="300" height="200"
   xmlns="http://www.w3.org/2000/svg">`;
 
-  // inserts user shape choice into file
-  svgContent += `${answers.shape}`;
-
-  // dynamic variable for shape choice
+  // dynamic variable for users shape choice that we can target
   let shapeChoice;
 
   // if statement to check for what user chose for shape, text color, and input
+  if (answers.shape === "Circle") {
+    shapeChoice = new Circle();
+    // svg code for circle using user input for shape color
+    svgContent += `<circle cx="50" cy="50" r="50" fill="${answers.shapeColor}"/>`;
+  } else if (answers.shape === "Triangle") {
+    // shapeChoice = new Triangle();
+    // // svg code for triangle
+    // svgContent += ``;
+  }
 
   // add basic text tag, then add dynamic text content and color from user prompt
+  svgContent += `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${answers.textColor}"}>${answers.textInput}</text>`;
 
+  // closing svg tag
+  
   // use fs to write file using the file name, final svg data
   fs.writeFile(fileName, svgContent, (err) => {
     // ternary operator to check for an error, if there is log it, else log
