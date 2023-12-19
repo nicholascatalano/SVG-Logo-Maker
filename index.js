@@ -78,7 +78,7 @@ function writeToFile(fileName, answers) {
   svgContent += `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${answers.textColor}"}>${answers.textInput}</text>`;
 
   // closing svg tag
-  
+  svgContent += `</svg>`;
   // use fs to write file using the file name, final svg data
   fs.writeFile(fileName, svgContent, (err) => {
     // ternary operator to check for an error, if there is log it, else log
