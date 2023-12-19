@@ -67,15 +67,12 @@ function writeToFile(fileName, answers) {
   if (answers.shape === "Circle") {
     shapeChoice = new Circle();
     // svg code for circle using user input for shape color
-    svgContent += `<circle cx="50" cy="50" r="50" fill="${answers.shapeColor}"/>`;
+    svgContent += shapeChoice;
   } else if (answers.shape === "Triangle") {
-    // shapeChoice = new Triangle();
-    // // svg code for triangle
-    // svgContent += ``;
   }
 
   // add basic text tag, then add dynamic text content and color from user prompt
-  svgContent += `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${answers.textColor}"}>${answers.textInput}</text>`;
+  svgContent += `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${answers.textColor}">${answers.textInput}</text>`;
 
   // closing svg tag
   svgContent += `</svg>`;
